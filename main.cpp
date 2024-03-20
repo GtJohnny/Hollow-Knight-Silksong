@@ -13,6 +13,11 @@ class Item{
     int usages;
 public:
     friend void UseItem();
+
+    friend std::ostream &operator<<(std::ostream &os, const Item &item) {
+        os << "Name: " << item.Name << " Description: " << item.Description << " usages: " << item.usages;
+        return os;
+    }
 };
 
 class Charm{
@@ -152,6 +157,12 @@ class Enemy{
 public:
     friend void AttackPlayer();
     friend void Death();
+
+    friend std::ostream &operator<<(std::ostream &os, const Enemy &enemy) {
+        os << "hp: " << enemy.hp << " armor: " << enemy.armor << " agility: " << enemy.agility << " evade: "
+           << enemy.evade;
+        return os;
+    }
 };
 
 class Point{
@@ -191,6 +202,11 @@ public:
                 std::cout<<"\nA speck of dust and money may have been forgotten\n";
             }
         }
+    }
+
+    friend std::ostream &operator<<(std::ostream &os, const Bloodstain &bloodstain) {
+        os << "money: " << bloodstain.money << " loc: " << bloodstain.loc << " collected: " << bloodstain.collected;
+        return os;
     }
 
 };
