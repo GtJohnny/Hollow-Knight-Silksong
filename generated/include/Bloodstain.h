@@ -10,7 +10,7 @@
 #include "Player.h"
 
 class Bloodstain{
-    int money;
+    static int money;
     Point locatie;
     Map map;
 public:
@@ -29,6 +29,7 @@ public:
 
     const Map &getMap() const;
 };
+int Bloodstain::money = 0;
 
 
 
