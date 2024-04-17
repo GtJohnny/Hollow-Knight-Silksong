@@ -34,7 +34,8 @@ public:
         ///@param val [int] Damage taken
         ///@param player [Player] Player who dealt that damage
     void getHit(int val,Player&player);
-    void getHeal(int);
+        ///@param val [int] value healed
+    void getHeal(int val);
 
 };
 
