@@ -75,7 +75,7 @@ public:
 };
 
 
-class AoeBuffPot:virtual public HealPotion,virtual public ExplosionPotion{
+class AoeBuffPot:virtual public HealPotion,public ExplosionPotion{
 
     int strength;
     int heal;
