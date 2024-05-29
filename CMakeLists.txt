@@ -127,32 +127,31 @@ endif()
 # NOTE: update executable name in .github/workflows/cmake.yml:25 when changing name here
 add_executable(${PROJECT_NAME}
     main.cpp
-    generated/src/Helper.cpp
-
-
-
-
     env_fixes.h
-        generated/src/Player.cpp
-        generated/include/Player.h
-        generated/src/Crest.cpp
-        generated/include/Crest.h
-        generated/src/Enemy.cpp
-        generated/include/Enemy.h
-        generated/src/Charm.cpp
-        generated/include/Charm.h
-        generated/src/Item.cpp
-        generated/include/Item.h
-        generated/src/Point.cpp
-        generated/include/Point.h
-        generated/src/Map.cpp
-        generated/include/Map.h
-        generated/src/Bloodstain.cpp
-        generated/include/Bloodstain.h
-        generated/src/Crests.cpp
-        generated/include/Crests.h
-        generated/src/Potions.cpp
-        generated/include/Potions.h
+        EnemyFactory.cpp
+        EnemyFactory.h
+        Maps/SmallEnemy.cpp
+        Maps/SmallEnemy.h
+        #        Player.cpp
+#        Player.h
+#        Crest.cpp
+#        Crest.h
+#        Enemy.cpp
+#        Enemy.h
+#        Charm.cpp
+#        Charm.h
+#        Item.cpp
+#        Item.h
+#        Point.cpp
+#        Point.h
+#        Map.cpp
+#        Map.h
+#        Bloodstain.cpp
+#        Bloodstain.h
+#        Crests.cpp
+#        Crests.h
+#        Potions.cpp
+#        Potions.h
 )
 
 ###############################################################################
