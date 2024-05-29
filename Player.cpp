@@ -2,19 +2,19 @@
 // Created by Ionuț Nica on 17.04.2024.
 //
 
-#include "../include/Player.h"
+#include "Player.h"
 
 Player::Player(int hp, int silk,  const Crest &crest,const std::string &name = "Hornet", int money=0)
     :hp(hp),hpMax(5),silk(silk),silkMax(99),speed(10),damage(5),crest(crest),money(money){
     this->map=new Map(1);
 }
 
-void Player::attack() {
-    ///
-}
-void Player::hit(Enemy&enemy) {
-    ///
-}
+//void Player::attack() {
+//    ///
+//}
+//void Player::hit(Enemy&enemy) {
+//    ///
+//}
 void Player::death() {
     if(this->reper) delete this->reper;
     this->reper = new Bloodstain(this->point,*this->map,this->money);
