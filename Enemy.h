@@ -26,14 +26,14 @@ public:
     Enemy(const std::string& nume,        ///@param nume [std::string] Enemy name
                 int hp,                    ///@param hp [int] Enemy health
                 int money,                ///@param money [int] Money dropped on death
-                const Point& location);    ///@param location [Point] Locatia de spawn 
+                const Point& location);    ///@param location [Point] Locatia de spawn
     Enemy(const Enemy& enemy);
     virtual void Attack()=0;
         
     void Death(Player&player);
         ///@param val [int] Damage taken
         ///@param player [Player] Player who dealt that damage
-  //  void getHit(int val,Player&player);
+    void getHit(int val,Player&player);
         ///@param val [int] value healed
     void getHeal(int val);
 

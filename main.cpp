@@ -2,47 +2,54 @@
 #include <string>
 #include <vector>
 #include <stack>
-#include "Player.h"
+//#include "Player.h"
+//#include "Enemy.h"
+
+#include <SFML/Window.hpp>
+#include <SFML/Graphics.hpp>
+
+
+void loadTexture(sf::RenderWindow& window, const std::string& fileName,int x,int y, int w, int l){
+    sf::Texture tx;
+    tx.loadFromFile(fileName);
+    sf::IntRect (x,y,w,l);
+    sf::Sprite sp(tx);
+    auto size = window.getSize();
+    sp.setScale(size.x/tx.getSize().x,size.y/tx.getSize().y);
+    window.draw(sp);
+}
 
 
 
 int main() {
-    /// select items, customizable, select crest
+
+    sf::RenderWindow window(sf::VideoMode(1024, 768), "My window");
+    while (window.isOpen())
+    {
+        sf::Event event;
+        while (window.pollEvent(event))
+        {
+            switch(event.type){
+                case sf::Event::Closed:
+                    window.close();
+                break;
+                case sf::Event::MouseButtonPressed:
+
+                break;
+
+                default:
+            }
+
+            sf::IntRect (0,0,1024,768);
+            loadTexture(window,"poze/meniu.png",0,0,1024,768);
+            loadTexture(window, "QuitGame.png", 800, 300, 200, 70);
+            loadTexture(window,"StartGame.png",800,400,200,70);
 
 
 
-
-/*
-
-    Player player("Hornet",5,5,0,15,old,12);
-    std::cout<<player;
-    Crest crest1(assassin);
-    player.EquipCrest(crest1);
-    Charm c1("Den1","Des",cloak,7);
-    std::cout<<c1;
-    Charm c2("Apex","an",assassin,10);
-    std::cout<<c2;
-    Charm c4("D3","Des",old,8);
-    Charm c3=c2+c1;
-    std::cout<<c3;
-
-    player.attack()
-
-
-
-
-
-
-    if(player.getHealth()==0) {
-        player.Death();
-        player.Retrieval();
+            window.close();
+        }
     }
-    Helper h;
-    h.help();
-
-
-*/
-
 
 }
 
